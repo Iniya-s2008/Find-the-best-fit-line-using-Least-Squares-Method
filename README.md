@@ -19,10 +19,31 @@ To implement univariate Linear Regression to fit a straight line using least squ
  Program:
 ```
 <img width="958" height="693" alt="image" src="https://github.com/user-attachments/assets/6b55087f-e781-42a3-a10c-43bd00efa072" />
-
+import numpy as np
+import matplotlib.pyplot as plt
+x=np.array(eval(input()))
+y=np.array(eval(input()))
+xmean=np.mean(x)
+ymean=np.mean(y)
+num=0
+denom=0
+for i in range(len(x)):
+    num+=(x[i]-xmean)*(y[i]-ymean)
+    denom+=(x[i]-xmean)**2
+m=num/denom
+c=ymean-m*xmean
+print("slope",m)
+print("Y-intercept",c)
+ypred=m*x+c
+print("Predicted values",ypred)
+plt.scatter(x,y)
+plt.plot(x,ypred)
+plt.show()
 
 Output:
 <img width="947" height="665" alt="image" src="https://github.com/user-attachments/assets/e7dcb13c-65b8-4bb4-afa1-b5c29c09159f" />
+
+<img width="1068" height="742" alt="image" src="https://github.com/user-attachments/assets/691e87d1-8e68-4142-aef0-ad1999bcd975" />
 
 
 
